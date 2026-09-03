@@ -80,4 +80,4 @@ Maven, JUnit 5 + AssertJ). Nenhuma dependência nova.
 ## Segurança / LGPD
 - Nenhum dado sensível novo é logado — a mensagem de erro e os logs (`WARN`) citam apenas
   tamanho do arquivo e limite configurado, nunca conteúdo do upload, seguindo
-  `.claude/rules/RULES.md`.
+  `.claude/rules/RULES.md` e demais configurações de privacidade.
