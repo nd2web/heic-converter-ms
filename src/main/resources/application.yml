@@ -12,6 +12,7 @@ spring:
 heic:
   convert-command: heif-convert
   timeout: 20s
+  max-file-size: 15MB
 
 management:
   endpoints:
