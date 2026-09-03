@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git push*)",
+            "command": "today=$(date +%F); if find .claude/memory -maxdepth 1 -name \"${today}-*.md\" 2>/dev/null | grep -q .; then echo '{\"continue\":true}'; else echo '{\"decision\":\"block\",\"reason\":\"Tarefa parece concluida (git push detectado). Antes de finalizar, invoque a skill task-memory (.claude/skills/task-memory/SKILL.md) para salvar em .claude/memory/ um registro desta tarefa: escopo trabalhado, ticket ClickUp (se houver), decisoes tomadas, data e responsaveis.\"}'; fi",
+            "statusMessage": "Verificando memoria da tarefa..."
+          }
+        ]
+      }
+    ]
+  }
+}
